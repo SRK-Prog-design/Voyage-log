@@ -37,6 +37,8 @@ public class MainActivity extends Activity {
         s.setJavaScriptEnabled(true);
         s.setDomStorageEnabled(true);
         s.setAllowFileAccess(false);
+        web.setLayerType(android.view.View.LAYER_TYPE_HARDWARE, null);
+        s.setCacheMode(WebSettings.LOAD_DEFAULT);
 
         final WebViewAssetLoader loader = new WebViewAssetLoader.Builder()
                 .addPathHandler("/assets/", new WebViewAssetLoader.AssetsPathHandler(this))

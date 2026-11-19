@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><script>try{var t=localStorage.getItem("nssl_theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script><title>NSSL Voyage Log</title><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0a3550"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Voyage Log"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<html lang="en"><head><meta charset="utf-8"><script>try{if(window.NSSLAndroid)document.documentElement.classList.add("lite")}catch(e){}try{var t=localStorage.getItem("nssl_theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script><title>NSSL Voyage Log</title><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0a3550"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Voyage Log"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>
 :root{--bg:#e6f1f5;--bg2:#d3e7ee;--card:#ffffffdd;--ink:#0b2a3d;--mut:#5a7683;--line:#c3dbe4;--acc:#0a86b0;--acc2:#e8a317;--bad:#c8433a;--inp:#f3f9fb;--on:#fff;
@@ -437,7 +437,25 @@ body::after{width:340px;height:340px;right:-120px;bottom:6vh;background:#ee3b2b2
 .orb{height:120px}.orb .flow{animation:none}
 
 .orb2{display:none;right:auto;left:0}@media(min-width:760px){.orb2{display:block}}
-</style><script src="jspdf.umd.min.js" onerror="var s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';document.head.appendChild(s)"></script></head><body>
+
+/* === phone (Android) performance mode === */
+html.lite *,html.lite *::before,html.lite *::after{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+html.lite body{background:linear-gradient(180deg,var(--bg),var(--bg2))}
+html.lite body::before,html.lite body::after,html.lite .hero::before,html.lite .card::before,html.lite .btn:not(.s)::after,html.lite .ec::after{display:none!important}
+html.lite .hero{animation:none}
+html.lite .card{animation:none;box-shadow:0 6px 16px -10px #0b2a4a66;background:var(--card)}
+html.lite section,html.lite .row,html.lite .cal .cd,html.lite .cd.td,html.lite .cd.sel,html.lite .ec,html.lite .ec.p0,html.lite .ot,html.lite .stars i,html.lite .bdg,html.lite .cd.vc::after{animation:none!important}
+html.lite .logo{filter:none;animation:bob 4s ease-in-out infinite}
+html.lite .orb{filter:none;will-change:transform}
+html.lite .orb .pgl,html.lite .orb .swy{animation:none}
+html.lite .orb .dots circle{animation:none}
+html.lite .dol2,html.lite .spl,html.lite .bd,html.lite .sp,html.lite .sm2,html.lite .cf{display:none!important}
+html.lite .nav{box-shadow:0 8px 18px -10px #000a;background:var(--card)}
+html.lite .toast{box-shadow:none}
+html.lite .rdr{will-change:transform}
+html.lite .rdr::after{will-change:transform}
+
+</style><script async src="jspdf.umd.min.js" onerror="var s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';document.head.appendChild(s)"></script></head><body>
 <svg width="0" height="0" style="position:absolute"><symbol id="tk" viewBox="0 0 64 40"><g transform="translate(64 0) scale(-1 1)">
 <rect x="51" y="5" width="5" height="7" fill="#d62839"/><rect x="51" y="8" width="5" height="1.5" fill="#fff"/>
 <rect x="46" y="12" width="12" height="4" fill="#f4f7fa"/><rect x="46" y="16" width="12" height="10" fill="#f4f7fa"/>
